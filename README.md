@@ -1,4 +1,16 @@
 # ⭐ CAED ⭐
+
+## *Current progress*
+| 項目 | 內容 | 負責人 | 完成時間 |
+| :--: | -- | :--: |:--:|
+| 爬蟲主題方向 | 人力銀行職缺相關內容 | - | 待討論 |
+| 爬蟲實作 | - | PC | - |
+| 架設 Airflow | - | PC / DL | - |
+| 資料表定義 | - | PC / DL | - |
+| 資料庫底層撰寫 | - | DL | - |
+| Docker | - | DL | - |
+| Public Clouds | - | DL | - |
+
 ## *Summary*
 - ### *A.　Crawler + Airflow*
   - #### Crawler: 撰寫爬蟲邏輯 ( 資料抓取 / 資料驗證 )
