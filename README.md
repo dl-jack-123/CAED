@@ -36,3 +36,32 @@
   - #### Amazon Web Services
   - #### Google Cloud Platform
   - #### Microsoft Azure
+
+
+## airflow 安裝
+
+### 建立資料夾
+```text
+./dags - you can put your DAG files here.
+
+./logs - contains logs from task execution and scheduler.
+
+./config - you can add custom log parser or add airflow_local_settings.py to configure cluster policy.
+
+./plugins - you can put your custom plugins here.
+```
+設定 AIRFLOW_UID 
+```bash
+echo -e "AIRFLOW_UID=$(id -u)" > .env
+```
+
+初始化資料庫與建立帳號
+```text
+docker compose up airflow-init
+```
+
+run
+
+```text
+docker compose up
+```
