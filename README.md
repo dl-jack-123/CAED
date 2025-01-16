@@ -8,13 +8,14 @@
 ## *Current progress*
 | 項目 | 內容 | 負責人 | 完成時間 |
 | :--: | -- | :--: |:--:|
-| 爬蟲主題方向 | 人力銀行職缺相關內容 | - | 待討論 |
-| 爬蟲實作 | - | PC | - |
+| 爬蟲主題方向 | 人力銀行職缺相關內容 | - | 2025-01-14 |
 | 架設 Airflow | - | PC / DL | - |
+| 爬蟲實作 | - | PC / DL | - |
 | 資料表定義 | - | PC / DL | - |
 | 資料庫底層撰寫 | - | DL | - |
-| Docker | - | DL | - |
-| Public Clouds | - | DL | - |
+| Docker | - | PC / DL | - |
+| Add LLM | - | PC / DL | - |
+| Public Clouds | - | PC / DL | - |
 
 ## *Summary*
 - ### *A.　Crawler + Airflow*
