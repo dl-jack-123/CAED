@@ -54,14 +54,22 @@
 ```bash
 echo -e "AIRFLOW_UID=$(id -u)" > .env
 ```
+或手動建立 .env 填入
+```text
+AIRFLOW_UID=50000
+```
 
 初始化資料庫與建立帳號
 ```text
 docker compose up airflow-init
 ```
 
-run
+執行
 
 ```text
 docker compose up
 ```
+
+預期!!!
+
+![img.png](img.png)
