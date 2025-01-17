@@ -73,3 +73,8 @@ docker compose up
 預期!!!
 
 ![img.png](img.png)
+
+接下來完成
+1. 資料存取設定
+2. 一個資料收集實作
+3. 表格建立
