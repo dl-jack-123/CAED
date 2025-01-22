@@ -284,5 +284,13 @@ services:
       airflow-init:
         condition: service_completed_successfully
 
+  airflow-python:
+    <<: *airflow-common
+    profiles:
+        - debug
+    environment:
+        <<: *airflow-common-env
+    user: "50000:0"
+    entrypoint: [ "/bin/bash", "-c" ]
 volumes:
   postgres-db-volume:
