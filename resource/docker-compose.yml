@@ -292,5 +292,9 @@ services:
         <<: *airflow-common-env
     user: "50000:0"
     entrypoint: [ "/bin/bash", "-c" ]
+    depends_on:
+      <<: *airflow-common-depends-on
+      airflow-init:
+        condition: service_completed_successfully
 volumes:
   postgres-db-volume:

@@ -93,6 +93,22 @@ docker compose up
 |log|	日誌文件| 	存放 DAG 執行過程中的詳細日誌                       |
 |plugins	|自定義功能與擴展| 	用於添加自定義 Operator,Hook, Macro, Executor等 |
 
+## Pycharm 設置
+![參考](https://airflow.apache.org/docs/apache-airflow/stable/howto/docker-compose/index.html)
+
+1. 啟動本專案的 `resource/docker-compose.yaml` 服務 -> `docker compose up`
+2. 在 Pycharm 中設置遠端執行環境
+    - `File` -> `Settings` -> `Project: CAED` -> `Python Interpreter`
+    - 點選右上角的齒輪 -> `Add` -> `On Docker Compose`
+    - 在 Configuration file 中選擇 `resource/docker-compose.yaml`
+    - `Service` 選擇 `airflow-python`，`Python Interpreter`
+    - 按下 `Next` -> `OK`
+    - ![參考圖片](https://airflow.apache.org/docs/apache-airflow/stable/_images/add_container_python_interpreter.png)
+    - 回到預 Debug 的腳本, 點選右鍵開啟執行前設定黨
+    - interpreter 選擇 airflow-python, 加入 exec 在 docker-compose/command
+    - ![參考圖片](https://airflow.apache.org/docs/apache-airflow/stable/_images/docker-compose-pycharm.png)
+    - 接下來對於 DAG 的開發就可以直接在 Pycharm 中進行了
+    
 
 接下來完成
 1. 資料存取設定
