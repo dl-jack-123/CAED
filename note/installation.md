@@ -39,4 +39,4 @@ docker compose up
 
 預期!!!
 
-![img.png](img.png)
+![img.png](../sample/img.png)
