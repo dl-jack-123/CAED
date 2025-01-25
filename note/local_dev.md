@@ -12,23 +12,23 @@
 ## *Airflow 依賴位置*
 
 ```bash
-- caed-airflow/config   用途：存放 Airflow 的配置文件（例如 airflow.cfg），這是 Airflow 的核心配置文件，定義了整個系統的行為和設置。
-                    內容：
-                        資料庫連接信息
-                        任務執行者（Executor）設置（如 LocalExecutor 或 CeleryExecutor）
-                        日誌設置、排程頻率等參數
-- caed-airflow/dags     用途：存放所有的工作流定義檔案（DAGs，Directed Acyclic Graphs）。
-- caed-airflow/logs     用途：存放任務執行時的日誌檔案，便於問題排查與監控。
-- caed-airflow/plugins  用途：存放自定義的 Airflow 擴展，如：
-                          Operator, Hook, Macro, Executor
+caed-airflow
+  ├── .env
+  ├── docker-compose.yml
+  ├── confing
+  ├── plugins
+  ├── logs
+  └── dags
+       ├── hello.py
+       └── 104_crawler.py
 ```
 
 | 目錄 | 代表意義 | 主要功能 |
 | :--: | :-- | :-- |
 | config | 配置文件| 定義 Airflow 行為與設置 |
-| dags | 工作流定義| 存放 DAG 腳本 |
-| log | 日誌文件| 存放 DAG 執行過程中的詳細日誌 |
-| plugins |自定義功能與擴展| 用於添加自定義 Operator,Hook, Macro, Executor等 |
+| dags | 工作流定義| 存放 DAG 腳本 (DAGs, Directed Acyclic Graphs) |
+| log | 日誌文件| 存放 DAG 執行過程中的詳細日誌，便於問題排查與監控 |
+| plugins |自定義功能與擴展| 用於添加自定義 Operator,Hook, Macro, Executor...etc. |
 
 <br>
 
