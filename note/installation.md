@@ -43,7 +43,11 @@ docker compose up airflow-init
 docker compose up -d
 ```
 
-### *Airflow 其他常用操作*
+![img.png](../sample/img.png)
+
+<br>
+
+## *Airflow 其他常用操作*
 
 #### *重啟服務 ( 更新檔案後的重整 )*
 ```bash
@@ -61,5 +65,3 @@ docker-compose up -d
 docker-compose down -v
 docker system prune --all --volumes
 ```
-
-![img.png](../sample/img.png)
