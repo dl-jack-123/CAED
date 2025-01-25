@@ -42,6 +42,11 @@
 
 <br>
 
+## *Showcase Results*
+```commandline
+http://localhost:8080/
+```
+
 ## *Note Library*
 -  ### [*⭐ Airflow Installation ⭐*](./note/installation.md)
 -  ### [*⭐ Airflow Local Development ⭐*](./note/local_dev.md)

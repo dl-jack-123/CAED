@@ -9,7 +9,7 @@
 ## *Airflow 安裝*
 
 ### *建立資料夾*
-```text
+```bash
 ./dags - you can put your DAG files here.
 
 ./logs - contains logs from task execution and scheduler.
@@ -25,18 +25,22 @@
     echo -e "AIRFLOW_UID=$(id -u)" > .env
     ```
 - 或手動建立 .env 填入
-    ```text
+    ```bash
     AIRFLOW_UID=50000
     ```
 
 ### *初始化資料庫與建立帳號*
-```text
+```bash
 docker compose up airflow-init
 ```
 
 ### *執行*
-```text
+```bash
 docker compose up
+```
+```bash
+# 背景執行
+docker compose up -d
 ```
 
 ![img.png](../sample/img.png)

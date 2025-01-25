@@ -8,7 +8,7 @@
 
 ## *Airflow 依賴位置*
 
-```text
+```bash
 - docker/config   用途：存放 Airflow 的配置文件（例如 airflow.cfg），這是 Airflow 的核心配置文件，定義了整個系統的行為和設置。
                     內容：
                         資料庫連接信息
