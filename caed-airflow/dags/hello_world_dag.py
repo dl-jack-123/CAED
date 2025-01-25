@@ -3,7 +3,7 @@ from airflow.operators.python import PythonOperator
 from datetime import datetime, timedelta
 
 # inside
-from crawler_logic.hellow_world import hellow_world, just_sleeping
+from logic.other.hellow_world import hellow_world, just_sleeping
 
 # DAG settings
 default_args = {
