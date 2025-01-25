@@ -7,9 +7,11 @@ Author: PC
 
 """
 import time, json, requests
+from bs4 import BeautifulSoup
 
 def crawler():
     url = 'https://www.104.com.tw/jobs/main/newestjob/?jobsource=index_hot_c&utm_medium=cweb_keyword&utm_source=104&tab=job_1'
+
     print(url)
 
 

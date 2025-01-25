@@ -43,6 +43,10 @@ caed-airflow
 
 ## *非 docker-compose 開發方式 (土法煉鋼 去你的...PyCharm pro)*
 - #### 本地運行邏輯程式，若通過則註解 if __main__ == '__name__':
+- #### 安裝本地開發必要套件
+   ```commandline
+   pip install -r requirements.txt
+   ```
 
 <br>
 
