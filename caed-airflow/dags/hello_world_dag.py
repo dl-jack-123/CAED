@@ -3,7 +3,7 @@ from airflow.operators.python import PythonOperator
 from datetime import datetime, timedelta
 
 # inside
-from logic.other.hellow_world import hellow_world, just_sleeping
+from logic.other.hello_world import hello_world, just_sleeping
 
 # DAG settings
 default_args = {
@@ -26,15 +26,15 @@ None: 不進行調度，僅用於「外部觸發」DAG
 """
 
 with DAG(
-        'hellow_world',
+        'hello_world',
         default_args=default_args,
         schedule_interval='@hourly',  # 每日執行一次
         start_date=datetime(2025, 1, 1),
         catchup=False,
 ) as dag:
     task1 = PythonOperator(
-        task_id='hellow_world',
-        python_callable=hellow_world,
+        task_id='hello_world',
+        python_callable=hello_world,
         op_kwargs={'text': 'hello world !'},
     )
 

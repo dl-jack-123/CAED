@@ -1,6 +1,6 @@
 import time
 
-def hellow_world(text: str):
+def hello_world(text: str):
     print(text)
 
 
