@@ -4,8 +4,11 @@
 [![](https://img.shields.io/badge/Project-Crawler-blue.svg?style=plastic)](https://github.com/dl-jack-123/CAED) 
 [![](https://img.shields.io/badge/Language-Python_3.12.0-blue.svg?style=plastic)](https://www.python.org/) <br>
 
+<br>
 
 # ⭐ CAED ⭐
+
+<br>
 
 ## *Current progress*
 | 項目 | 內容 | 負責人 | 完成時間 |
@@ -20,6 +23,8 @@
 | 用 PostgreSQL 完成資料儲存 | - | - | - |
 | 用 MongoDB 完成資料儲存 | - | - | - |
 | Public Clouds | - | PC / DL | - |
+
+<br>
 
 ## *Summary*
 - ### *A.　Crawler + Airflow + ELK Stack + Docker*
@@ -37,6 +42,8 @@
   - #### Amazon Web Services
   - #### Google Cloud Platform
   - #### Microsoft Azure
+
+<br>
 
 ## *Note Library*
 -  ### [*⭐ Airflow Installation ⭐*](./note/installation.md)

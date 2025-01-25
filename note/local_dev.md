@@ -4,8 +4,9 @@
 [![](https://img.shields.io/badge/Project-Crawler-blue.svg?style=plastic)](https://github.com/dl-jack-123/CAED) 
 [![](https://img.shields.io/badge/Language-Python_3.12.0-blue.svg?style=plastic)](https://www.python.org/) <br>
 
+<br>
 
-## airflow 依賴位置
+## *Airflow 依賴位置*
 
 ```text
 - docker/config   用途：存放 Airflow 的配置文件（例如 airflow.cfg），這是 Airflow 的核心配置文件，定義了整個系統的行為和設置。
@@ -26,7 +27,9 @@
 | log | 日誌文件| 存放 DAG 執行過程中的詳細日誌 |
 | plugins |自定義功能與擴展| 用於添加自定義 Operator,Hook, Macro, Executor等 |
 
-## Pycharm 設置
+<br>
+
+## *Pycharm 設置*
 
 1. 啟動本專案的 `docker/docker-compose.yaml` 服務 -> `docker compose up`
 2. 在 Pycharm 中設置遠端執行環境
@@ -41,6 +44,7 @@
     - ![參考圖片](https://airflow.apache.org/docs/apache-airflow/stable/_images/docker-compose-pycharm.png)
     - 接下來對於 DAG 的開發就可以直接在 Pycharm 中進行了
 
+<br>
 
 ## *Reference*
 -  ### [Running Airflow in Docker](https://airflow.apache.org/docs/apache-airflow/stable/howto/docker-compose/index.html)
