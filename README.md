@@ -57,5 +57,5 @@ http://localhost:8080/
 <br>
 
 ## *Note Library*
--  ### [*⭐ Airflow Installation ⭐*](./note/installation.md)
+-  ### [*⭐ Airflow Installation & Common Operations ⭐*](./note/installation.md)
 -  ### [*⭐ Airflow Local Development ⭐*](./note/local_dev.md)
