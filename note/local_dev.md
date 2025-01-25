@@ -18,9 +18,13 @@ caed-airflow
   ├── confing
   ├── plugins
   ├── logs
-  └── dags
-       ├── hello.py
-       └── 104_crawler.py
+  └── dags # 放置 dag 檔案
+       ├── disabled # 將不使用 dag 腳本遮蔽
+       │   └── hellow_world.py
+       ├── crawler_logic # 放置 dag 引用的邏輯程式
+       │   └── hello.py
+       │
+       └── 104_crawler_dag.py
 ```
 
 | 目錄 | 代表意義 | 主要功能 |
