@@ -34,7 +34,7 @@ with DAG(
 ) as dag:
     task1 = PythonOperator(
         task_id='crawler_104',
-        python_callable=crawler_104,
+        python_callable=crawler,
     )
 
     task1
