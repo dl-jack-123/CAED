@@ -51,7 +51,7 @@ docker compose up -d
 
 #### *重啟服務 ( 更新檔案後的重整 )*
 ```bash
-docker-compose restart webserver
+docker-compose restart airflow-webserver
 ```
 
 #### *完全重啟服務*
