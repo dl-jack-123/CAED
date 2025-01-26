@@ -70,11 +70,7 @@ jobs:
 
           if [ ! -f git_state/CLONE.md ]; then
             shields="https://img.shields.io/badge/dynamic/json?color=success&label=Clone&query=count_total&url="
-<<<<<<< HEAD
-            url="https://gist.githubusercontent.com/${{ github.actor }}/${{ steps.set_id.outputs.GIST }}/raw/CAED_clone.json"
-=======
             url="https://gist.githubusercontent.com/dl-jack-123/${{ steps.set_id.outputs.GIST }}/raw/CAED_clone.json"
->>>>>>> e65ceb4e4d9941f5bf58c9f31633e96364f6429a
             repo="https://github.com/dl-jack-123/CAED/git_state"
             echo ''> git_state/CLONE.md
             echo '

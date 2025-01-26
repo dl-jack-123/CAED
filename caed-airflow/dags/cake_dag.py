@@ -3,7 +3,7 @@ from airflow.operators.python import PythonOperator
 from datetime import datetime, timedelta
 
 # inside
-from logic.crawler.crawler_104 import crawler
+from logic.crawler.crawler_cake import crawler, log
 
 # DAG settings
 default_args = {
@@ -26,15 +26,19 @@ None: 不進行調度，僅用於「外部觸發」DAG
 """
 
 with DAG(
-        'crawler_104',
+        'crawler_cake',
         default_args=default_args,
         schedule_interval='@daily',
         start_date=datetime(2025, 1, 1),
         catchup=False,
 ) as dag:
     task1 = PythonOperator(
-        task_id='crawler_104',
+        task_id='crawler',
         python_callable=crawler,
     )
+    task2 = PythonOperator(
+        task_id='log',
+        python_callable=log,
+    )
 
-    task1
+    task1 >> task2
