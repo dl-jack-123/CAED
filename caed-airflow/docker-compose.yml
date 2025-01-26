@@ -93,13 +93,17 @@ services:
       POSTGRES_PASSWORD: airflow
       POSTGRES_DB: airflow
     volumes:
-      - postgres-db-volume:/var/lib/postgresql/data
+      - ./database:/var/lib/postgresql/data
+      - ./dags/sql/CreateDB.sql:/docker-entrypoint-initdb.d/CreateDB.sql
+      - ./dags/sql/Job.sql:/docker-entrypoint-initdb.d/Job.sql
     healthcheck:
       test: ["CMD", "pg_isready", "-U", "airflow"]
       interval: 10s
       retries: 5
       start_period: 5s
     restart: always
+    ports:
+      - 5432:5432
 
   redis:
     # Redis is limited to 7.2-bookworm due to licencing change
@@ -296,5 +300,7 @@ services:
       <<: *airflow-common-depends-on
       airflow-init:
         condition: service_completed_successfully
-volumes:
-  postgres-db-volume:
+
+
+
+
