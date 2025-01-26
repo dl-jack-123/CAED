@@ -45,6 +45,7 @@ def crawler(**kwargs) -> dict:
             report_date = datetime.strptime(f'{i['appearDate'][:4]}-{i['appearDate'][4:6]}-{i['appearDate'][6:]}', '%Y-%m-%d')
             pre_data[i['jobNo']] = {
                 'report_date': str(report_date)[:10],
+                'source_type': '104',
                 'pay': i['salaryDesc'],
                 'state': i['applyDesc'],
                 'company': i['custNameRaw'],
