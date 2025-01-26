@@ -9,35 +9,21 @@
 
 <br>
 
-## *⭐ Airflow Installation ⭐*
+## *⭐ Airflow Common Operations ⭐*
 
-#### *I.　建立資料夾*
-```commandline
-cd caed-airflow
-```
-```commandline
-md dags; md logs; md plugins; md config
-```
-
-#### *II.　設定變數*
-- 設定 AIRFLOW_UID 
-    ```bash
-    echo -e "AIRFLOW_UID=$(id -u)" > .env
-    ```
-- 或手動建立 .env 填入
-    ```bash
-    AIRFLOW_UID=50000
-    ```
-
-#### *III.　初始化資料庫與建立帳號*
+#### *重啟服務 ( 更新檔案後的重整 )*
 ```bash
-docker compose up airflow-init
+docker-compose restart airflow-webserver
 ```
 
-#### *IV.　執行*
+#### *完全重啟服務*
 ```bash
-# Background Execution
-docker compose up -d
+docker-compose down
+docker-compose up -d
 ```
 
-![jpg](../sample/installation_00.jpg)
+#### *移除服務步驟*
+```bash
+docker-compose down -v
+docker system prune --all --volumes
+```

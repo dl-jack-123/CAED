@@ -9,35 +9,14 @@
 
 <br>
 
-## *⭐ Airflow Installation ⭐*
+## *⭐ Airflow UI Operations ⭐*
 
-#### *I.　建立資料夾*
-```commandline
-cd caed-airflow
-```
-```commandline
-md dags; md logs; md plugins; md config
-```
+### *I.　如何檢視 Dag 任務 log*
+![jpg](../sample/ui_00.jpg)
+![jpg](../sample/ui_01.jpg)
+![jpg](../sample/ui_02.jpg)
 
-#### *II.　設定變數*
-- 設定 AIRFLOW_UID 
-    ```bash
-    echo -e "AIRFLOW_UID=$(id -u)" > .env
-    ```
-- 或手動建立 .env 填入
-    ```bash
-    AIRFLOW_UID=50000
-    ```
 
-#### *III.　初始化資料庫與建立帳號*
-```bash
-docker compose up airflow-init
-```
-
-#### *IV.　執行*
-```bash
-# Background Execution
-docker compose up -d
-```
-
-![jpg](../sample/installation_00.jpg)
+### *II.　如何手動啟動 Dag 任務*
+![jpg](../sample/ui_03.jpg)
+![jpg](../sample/ui_04.jpg)

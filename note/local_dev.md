@@ -9,7 +9,7 @@
 
 <br>
 
-## *Airflow 依賴位置*
+## *⭐ Airflow Local Development ⭐*
 
 ```bash
 caed-airflow
@@ -18,18 +18,18 @@ caed-airflow
   ├── confing
   ├── plugins
   ├── logs
-  ├── disabled # 將不使用 dag 腳本遮蔽
+  ├── disabled # 放置欲遮蔽 dag 腳本
   │    └── hello_world.py
-  └── dags # 放置 dag 檔案
+  └── dags # 放置欲運行 dag 腳本
        │
-       ├── logic # 放置 dag 引用的邏輯程式
+       ├── logic # 放置 dag 引用邏輯
        │   ├── crawler
        │   │    └── crawler_104.py
        │   └── other
        │        └── hello_world.py
        │
-       ├── other_hello_world_dag.py
-       └── crawler_104_dag.py
+       ├── hello_world_dag.py
+       └── 104_dag.py
 ```
 
 | 目錄 | 代表意義 | 主要功能 |
@@ -41,7 +41,7 @@ caed-airflow
 
 <br>
 
-## *非 docker-compose 開發方式 (土法煉鋼 去你的...PyCharm pro)*
+## *非 docker-compose 開發方式 (土法煉鋼 去你的...Pycharm Pro)*
 - #### 本地運行邏輯程式，若通過則註解 if __main__ == '__name__':
 - #### 安裝本地開發必要套件
    ```commandline
@@ -59,10 +59,10 @@ caed-airflow
     - 在 Configuration file 中選擇 `caed-airflow/docker-compose.yaml`
     - `Service` 選擇 `airflow-python`，`Python Interpreter`
     - 按下 `Next` -> `OK`
-    - ![參考圖片](https://airflow.apache.org/docs/apache-airflow/stable/_images/add_container_python_interpreter.png)
+    - ![jpg](https://airflow.apache.org/docs/apache-airflow/stable/_images/add_container_python_interpreter.png)
     - 回到預 Debug 的腳本, 點選右鍵開啟執行前設定黨
     - interpreter 選擇 airflow-python, 加入 exec 在 docker-compose/command
-    - ![參考圖片](https://airflow.apache.org/docs/apache-airflow/stable/_images/docker-compose-pycharm.png)
+    - ![jpg](https://airflow.apache.org/docs/apache-airflow/stable/_images/docker-compose-pycharm.png)
     - 接下來對於 DAG 的開發就可以直接在 Pycharm 中進行了
 
 <br>
