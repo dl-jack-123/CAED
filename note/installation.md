@@ -17,7 +17,7 @@
 cd caed-airflow
 ```
 ```commandline
-md dags; md logs; md plugins; md config
+md dags; md logs; md plugins; md config; md database
 ```
 
 #### *II.　設定變數*
