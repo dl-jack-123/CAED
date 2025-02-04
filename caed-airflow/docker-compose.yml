@@ -103,7 +103,7 @@ services:
       start_period: 5s
     restart: always
     ports:
-      - 5432:5432
+      - "5432:5432"
 
   redis:
     # Redis is limited to 7.2-bookworm due to licencing change
@@ -295,7 +295,15 @@ services:
     environment:
         <<: *airflow-common-env
     user: "50000:0"
-    entrypoint: [ "/bin/bash", "-c" ]
+#    user: "0:0"  # 以 root 執行
+#    entrypoint: ["/bin/bash", "-c", "pip install pydevd-pycharm~=243.23654.177 && tail -f /dev/null"]
+    entrypoint: ["/bin/bash", "-c", "pip install pydevd-pycharm~=243.23654.177 && mkdir -p /opt/.pycharm_helpers/pydev && ln -s /home/airflow/.local/lib/python3.12/site-packages/pydevd.py /opt/.pycharm_helpers/pydev/pydevd.py && tail -f /dev/null"]
+#    entrypoint: ["/bin/bash", "-c", "pip install pydevd-pycharm~=243.23654.177 && mkdir -p /opt/.pycharm_helpers/pydev && rm -f /opt/.pycharm_helpers/pydev/pydevd.py && ln -s /home/airflow/.local/lib/python3.12/site-packages/pydevd.py /opt/.pycharm_helpers/pydev/pydevd.py && tail -f /dev/null"]
+    volumes:
+      - ./.pycharm_helpers:/opt/.pycharm_helpers
+      - ./dags:/opt/airflow/dags
+    env_file:
+      - .env
     depends_on:
       <<: *airflow-common-depends-on
       airflow-init:

@@ -171,9 +171,8 @@ cython_debug/
 
 # PyPI configuration file
 .pypirc
-
 .idea
 
+.pycharm_helpers
 data
-
 /caed-airflow/database/

@@ -17,7 +17,7 @@
 cd caed-airflow
 ```
 ```commandline
-md dags; md logs; md plugins; md config; md database
+md dags; md logs; md plugins; md config; md database; md .pycharm_helpers
 ```
 
 #### *II.　設定變數*
