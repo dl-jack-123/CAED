@@ -20,11 +20,18 @@ docker-compose restart airflow-webserver
 #### *完全重啟服務*
 ```bash
 docker-compose down
+```
+```bash
 docker-compose up -d
 ```
 
 #### *移除服務步驟*
 ```bash
+docker stop <airflow-python container id>
+```
+```bash
 docker-compose down -v
+```
+```bash
 docker system prune --all --volumes
 ```

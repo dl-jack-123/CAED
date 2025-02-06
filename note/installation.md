@@ -30,14 +30,18 @@ md dags; md logs; md plugins; md config; md database; md .pycharm_helpers
     AIRFLOW_UID=50000
     ```
 
-#### *III.　初始化資料庫與建立帳號*
+#### *III.　初始化服務*
 ```bash
-docker compose up airflow-init
+docker compose up airflow-init -d
 ```
 
-#### *IV.　執行*
+#### *IV.　啟動 Python Debug 服務*
 ```bash
-# Background Execution
+docker compose up airflow-python -d
+```
+
+#### *V.　執行*
+```bash
 docker compose up -d
 ```
 

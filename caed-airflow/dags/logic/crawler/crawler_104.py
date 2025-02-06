@@ -5,13 +5,29 @@ Author: PC
         - 最新職缺: 社群行銷 / 軟體工程 / 金融保險 / 業務銷售 / 專案管理
             - https://www.104.com.tw/jobs/main/newestjob/?jobsource=index_hot_c&utm_medium=cweb_keyword&utm_source=104&tab=job_1
 """
+# import pdb
+# import pydevd_pycharm
 import urllib.parse
 import time, json, requests
 import pandas as pd
 from datetime import datetime
 from bs4 import BeautifulSoup
 
+# pydevd_pycharm.settrace(
+#     # 'host.docker.internal',  # 將 localhost 改為 Docker 宿主機
+#     'localhost',  # 將 localhost 改為 Docker 宿主機
+#     port=5678,               # 確保與 PyCharm 設置的 Debug 端口一致
+#     stdoutToServer=True,
+#     stderrToServer=True,
+#     suspend=True
+# )
+
 def crawler(**kwargs) -> dict:
+    # pydevd_pycharm.settrace('localhost', port=5678, stdoutToServer=True, stderrToServer=True, suspend=True)
+    # pdb.set_trace()
+    # settrace()
+    # pydevd_pycharm.settrace('host.docker.internal', port=5678, stdoutToServer=True, stderrToServer=True, suspend=True)
+
     pre_data = {}
     session = requests.Session()
 

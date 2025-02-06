@@ -295,16 +295,12 @@ services:
     environment:
         <<: *airflow-common-env
     user: "50000:0"
-#    user: "0:0"  # 以 root 執行
-#    entrypoint: ["/bin/bash", "-c", "pip install pydevd-pycharm~=243.23654.177 && tail -f /dev/null"]
     entrypoint: ["/bin/bash", "-c", "pip install pydevd-pycharm~=243.23654.177 && mkdir -p /opt/.pycharm_helpers/pydev && ln -s /home/airflow/.local/lib/python3.12/site-packages/pydevd.py /opt/.pycharm_helpers/pydev/pydevd.py && tail -f /dev/null"]
-#    entrypoint: ["/bin/bash", "-c", "pip install pydevd-pycharm~=243.23654.177 && mkdir -p /opt/.pycharm_helpers/pydev && rm -f /opt/.pycharm_helpers/pydev/pydevd.py && ln -s /home/airflow/.local/lib/python3.12/site-packages/pydevd.py /opt/.pycharm_helpers/pydev/pydevd.py && tail -f /dev/null"]
     volumes:
       - ./.pycharm_helpers:/opt/.pycharm_helpers
       - ./dags:/opt/airflow/dags
+#    restart: always
+#    ports:
+#      - "5678:5678" # 映射 Debug 端口
     env_file:
       - .env
-    depends_on:
-      <<: *airflow-common-depends-on
-      airflow-init:
-        condition: service_completed_successfully

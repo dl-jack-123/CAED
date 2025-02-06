@@ -28,7 +28,7 @@ None: 不進行調度，僅用於「外部觸發」DAG
 with DAG(
         'crawler_cake',
         default_args=default_args,
-        schedule_interval='@daily',
+        schedule='@daily',
         start_date=datetime(2025, 1, 1),
         catchup=False,
 ) as dag:
