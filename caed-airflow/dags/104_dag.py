@@ -3,7 +3,8 @@ from airflow.operators.python import PythonOperator
 from datetime import datetime, timedelta
 
 from logic.crawler.crawler_104 import crawler, log
-
+from airflow.providers.common.sql.operators.sql import SQLExecuteQueryOperator
+from airflow.providers.postgres.operators.postgres import PostgresOperator
 # DAG settings
 default_args = {
     'owner': 'airflow',
@@ -24,6 +25,7 @@ None: 不進行調度，僅用於「外部觸發」DAG
 @yearly: 每年 1 月 1 日午夜運行一次
 """
 
+
 with DAG(
         'crawler_104',
         default_args=default_args,
@@ -39,4 +41,23 @@ with DAG(
         task_id='log',
         python_callable=log,
     )
-    task1 >> task2
+
+    # 存去 TABLE 的 SQL 語法, 用 jinja2 模板
+    insert_sql = """
+INSERT INTO t_job (job_no, report_date, source_type, company, title, state, company_type)
+VALUES 
+    {% for row in ti.xcom_pull(task_ids='crawler', key='104_data')  %}
+    ('{{ row.jobNo }}', '{{ row.report_date }}', '{{ row.source_type }}', '{{ row.company }}', '{{ row.title }}', '{{ row.state }}', '{{ row.company_type }}'){% if not loop.last %}, {% endif %}
+    {% endfor %}
+"""
+
+
+    store_in_postgres = PostgresOperator(
+        task_id='store_in_postgres',
+        postgres_conn_id='ps',  # You need to set up a connection for PostgreSQL
+        sql=insert_sql,
+        dag=dag,
+    )
+
+
+    task1 >> task2 >> store_in_postgres

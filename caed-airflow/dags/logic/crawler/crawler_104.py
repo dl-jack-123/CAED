@@ -60,6 +60,7 @@ def crawler(**kwargs) -> dict:
             # print(i)
             report_date = datetime.strptime(f'{i['appearDate'][:4]}-{i['appearDate'][4:6]}-{i['appearDate'][6:]}', '%Y-%m-%d')
             pre_data[i['jobNo']] = {
+                'jobNo': i['jobNo'],
                 'report_date': str(report_date)[:10],
                 'source_type': '104',
                 'pay': i['salaryDesc'],
@@ -72,6 +73,21 @@ def crawler(**kwargs) -> dict:
                 'condition_2': '工作經歷' + i['periodDesc'],
                 'link': 'https://' + i['link']['job'],
             }
+    # 需要轉成像[{}, {}] 的寫法
+    datum = []
+    for k, v in pre_data.items():
+        # datum += f"('{v['jobNo']}', '{v['report_date']}', '{v['source_type']}', '{v['company']}', '{v['title']}', '{v['state']}', '{v['company_type']}'),\n"
+        datum.append({
+            'jobNo': v['jobNo'],
+            'report_date': v['report_date'],
+            'source_type': v['source_type'],
+            'company': v['company'],
+            'title': v['title'],
+            'state': v['state'],
+            'company_type': v['company_type'],
+        })
+    # kwargs['ti'].xcom_push(key='104_data', value=datum[:-2])
+    kwargs['ti'].xcom_push(key='104_data', value=datum)
     return pre_data
 
 def log(ti, **kwargs):
