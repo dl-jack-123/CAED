@@ -2,7 +2,6 @@ from airflow import DAG
 from airflow.operators.python import PythonOperator
 from datetime import datetime, timedelta
 
-# inside
 from logic.other.hello_world import hello_world, just_sleeping
 
 # DAG settings

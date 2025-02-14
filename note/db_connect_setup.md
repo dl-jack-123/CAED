@@ -18,15 +18,15 @@
 ```bash
 docker-compose up -d --no-deps --build postgres
 ```
-- Connection Id (要在airflow中使用的id): `ps` (postgresql)
-- HOST (連接的主機): `Your ipv4 address`
-- Connection Type (連接的資料庫類型): `Postgres`
-- Database (連接的db名稱): `JB` (初始化建立的db)
-- Login 和 Password 都是 `airflow`
+- Connection Id ( SQL 在 Airflow 中使用的 ID ): `ps` ( postgreSQL )
+- HOST ( 連接主機IP ): `Your ipv4 address`
+- Connection Type ( 連接資料庫類型 ): `Postgres`
+- Database ( 連接的db名稱 ): `JB` ( 初始化建立的db )
+- Login 和 Password 皆是 `airflow`
 - ![png](../sample/db_connect_setup_1.png)
 - 填完後, 可從 Pycharm Data Source 設定連接
 - ![png](../sample/db_connect_setup_4.png)
-- 上述設定完後到 DAG 執行 postgres_operator_dag
+- 上述設定完後到 DAG 執行 create_postgres_job_table
 - ![png](../sample/db_connect_setup_5.png)
 - Done !
 

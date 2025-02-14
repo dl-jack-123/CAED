@@ -20,3 +20,6 @@
 ### *II.　如何手動啟動 Dag 任務*
 ![jpg](../sample/ui_03.jpg)
 ![jpg](../sample/ui_04.jpg)
+
+### *III.　從 DAG log 中的 `XCom` 可以檢視 `流程函式` 傳遞的變數*
+![jpg](../sample/ui_05.jpg)
