@@ -10,7 +10,7 @@ import pandas as pd
 from datetime import datetime
 from bs4 import BeautifulSoup
 
-def crawler(**kwargs) -> dict:
+def crawler(**kwargs):
     pre_data = {}
     session = requests.Session()
 
