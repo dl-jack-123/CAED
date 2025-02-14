@@ -1,11 +1,13 @@
-from airflow import DAG
-from airflow.operators.python import PythonOperator
 from datetime import datetime, timedelta
 
-# inside
-from logic.crawler.crawler_cake import crawler, log
+from airflow import DAG
+from airflow.operators.python import PythonOperator
+from airflow.providers.postgres.operators.postgres import PostgresOperator
+from airflow.providers.common.sql.operators.sql import SQLExecuteQueryOperator
 
-# DAG settings
+from logic.crawler.crawler_cake import crawler, log
+from logic.construct_sql_syntax.save_db import t_job_insert
+
 default_args = {
     'owner': 'airflow',
     'depends_on_past': False,
@@ -14,6 +16,7 @@ default_args = {
     'retries': 1,
     'retry_delay': timedelta(minutes=5),
 }
+
 """
 https://airflow.apache.org/docs/apache-airflow/1.10.1/scheduler.html
 None: 不進行調度，僅用於「外部觸發」DAG
@@ -33,12 +36,33 @@ with DAG(
         catchup=False,
 ) as dag:
     task1 = PythonOperator(
-        task_id='crawler',
+        task_id='1.crawler',
         python_callable=crawler,
+        provide_context=True,
     )
     task2 = PythonOperator(
-        task_id='log',
+        task_id='2.log',
         python_callable=log,
+        op_kwargs={
+            'task_ids': 'crawler',
+            'key': 'crawler_data',
+        },
+        provide_context=True,
+    )
+    task3 = PythonOperator(
+        task_id='3.construct_sql_syntax-insert',
+        python_callable=t_job_insert,
+        op_kwargs={
+            'task_ids': '1.crawler',
+            'key': 'crawler_data',
+            'table_name': 't_job',
+        },
+        provide_context=True,
+    )
+    task4 = PostgresOperator(
+        task_id='4.store-postgres',
+        postgres_conn_id='ps',  # You need to set up a connection for PostgreSQL
+        sql="{{ ti.xcom_pull(task_ids='3.construct_sql_syntax-insert', key='construct_sql_syntax') }}",
     )
 
-    task1 >> task2
+    task1 >> task2 >> task3 >> task4

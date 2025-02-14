@@ -6,24 +6,21 @@
 [![](https://img.shields.io/badge/Language-Python_3.12.0-blue.svg?style=plastic)](https://www.python.org/) 
 [![](https://img.shields.io/badge/Operating_System-Windows_10-blue.svg?style=plastic)](https://www.microsoft.com/zh-tw/software-download/windows10) <br>
 [![](https://img.shields.io/badge/Database-PostgreSQL-yellow.svg?style=plastic)](https://github.com/dl-jack-123/CAED) 
-[![](https://img.shields.io/badge/Database-MongoDB-yellow.svg?style=plastic)](https://github.com/dl-jack-123/CAED)
 
 <br>
 
 # ⭐ CAED ⭐
 ## *A.　Current progress*
 | 項目 | 內容 | 負責人 | 完成時間 |
-| :--: | :--: | :--: |:--:|
+| :--: | :--: | :--: |:- -:|
 | 爬蟲主題方向 | 人力銀行職缺相關內容 | - | 2025-01-14 |
 | 架設 Airflow 服務 | - | PC / DL | 2025-01-16 |
 | 104 爬蟲實作 | 簡易版 | PC | 2025-01-26 |
 | cake 爬蟲實作 | 簡易版 | PC | 2025-01-26 |
-| 資料表定義 | - | PC / DL | - |
-| 資料庫底層撰寫 | - | DL | - |
-| 資料存取設置 | - | DL | - |
-| 資料表建立 | - | DL | - |
-| 以 PostgreSQL 儲存資料 | - | - | - |
-| 以 MongoDB 儲存資料 | - | - | - |
+| 資料表定義 | - | PC / DL | 2025-02-10 |
+| 資料存取設置 | - | DL | 2025-02-10 |
+| 資料表建立 | - | DL | 2025-02-10 |
+| 以 PostgreSQL 儲存資料 | - | DL | 2025-02-10 |
 | Public Clouds | - | PC / DL | - |
 
 <br>
@@ -37,7 +34,7 @@
     - #### 配置 Logstash，將 Airflow 和爬蟲日誌導入 Elasticsearch
     - #### 使用 Kibana 可視化日誌，方便追蹤問題與錯誤
   - #### *Docker :* 將數個服務容器化，統一管理
-- ### *b.　PostgreSQL / MongoDB*
+- ### *b.　PostgreSQL*
   - #### 定義資料庫規範
   - #### 測試基本的資料寫入、查詢與驗證
 - ### *c.　Deployed on 3 Major Public Clouds*
@@ -63,3 +60,4 @@ http://localhost:8080/
 -  ### [*⭐ Airflow Common Operations ⭐*](./note/common_operations.md)
 -  ### [*⭐ Airflow Local Development ⭐*](./note/local_dev.md)
 -  ### [*⭐ Airflow UI Operations ⭐*](./note/ui_operations.md)
+-  ### [*⭐ Database Connection Setup (PostgreSQL) ⭐*](./note/db_connect_setup.md)

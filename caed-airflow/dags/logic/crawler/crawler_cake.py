@@ -57,9 +57,9 @@ def crawler(**kwargs) -> dict:
 
     return pre_data
 
-# def log(pre_data):
-def log(**kwargs):
-    pre_data = kwargs['ti'].xcom_pull(task_ids='crawler')
+def log(pre_data):
+# def log(**kwargs):
+#     pre_data = kwargs['ti'].xcom_pull(task_ids='crawler')
 
     pd.set_option('display.max_colwidth', None)
     pd.set_option('display.max_columns', None)
@@ -69,6 +69,6 @@ def log(**kwargs):
     print(df)
     print(pre_data)
 
-# if __name__ == "__main__":
-#     pre_data = crawler()
-#     log(pre_data)
+if __name__ == "__main__":
+    pre_data = crawler()
+    log(pre_data)
