@@ -57,9 +57,9 @@ def crawler(**kwargs) -> dict:
 
     return pre_data
 
-def log(ti, **kwargs):
 # def log(pre_data):
-    pre_data = ti.xcom_pull(task_ids='crawler')
+def log(**kwargs):
+    pre_data = kwargs['ti'].xcom_pull(task_ids='crawler')
 
     pd.set_option('display.max_colwidth', None)
     pd.set_option('display.max_columns', None)

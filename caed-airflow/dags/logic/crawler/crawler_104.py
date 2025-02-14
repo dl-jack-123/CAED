@@ -8,8 +8,8 @@ Author: PC
 # import pdb
 # import pydevd_pycharm
 import urllib.parse
-import time, json, requests
 import pandas as pd
+import time, json, requests
 from datetime import datetime
 from bs4 import BeautifulSoup
 
@@ -22,7 +22,7 @@ from bs4 import BeautifulSoup
 #     suspend=True
 # )
 
-def crawler(**kwargs) -> dict:
+def crawler(**kwargs):
     # pydevd_pycharm.settrace('localhost', port=5678, stdoutToServer=True, stderrToServer=True, suspend=True)
     # pdb.set_trace()
     # settrace()
@@ -30,7 +30,6 @@ def crawler(**kwargs) -> dict:
 
     pre_data = {}
     session = requests.Session()
-
     todo = {
         '社群行銷': 1,
         '軟體工程': 2,
@@ -73,7 +72,8 @@ def crawler(**kwargs) -> dict:
                 'condition_2': '工作經歷' + i['periodDesc'],
                 'link': 'https://' + i['link']['job'],
             }
-    # 需要轉成像[{}, {}] 的寫法
+
+    # TODO 需要轉成像[{}, {}] 的寫法
     datum = []
     for k, v in pre_data.items():
         # datum += f"('{v['jobNo']}', '{v['report_date']}', '{v['source_type']}', '{v['company']}', '{v['title']}', '{v['state']}', '{v['company_type']}'),\n"
@@ -86,20 +86,20 @@ def crawler(**kwargs) -> dict:
             'state': v['state'],
             'company_type': v['company_type'],
         })
-    # kwargs['ti'].xcom_push(key='104_data', value=datum[:-2])
-    kwargs['ti'].xcom_push(key='104_data', value=datum)
-    return pre_data
 
-def log(ti, **kwargs):
+    # return pre_data
+    kwargs['ti'].xcom_push(key='crawler_data', value=datum)
+
 # def log(pre_data):
-    pre_data = ti.xcom_pull(task_ids='crawler')
+def log(**kwargs):
+    pre_data = kwargs['ti'].xcom_pull(task_ids=kwargs['task_ids'], key=kwargs['key'])
 
     pd.set_option('display.max_colwidth', None)
     pd.set_option('display.max_columns', None)
     pd.set_option('display.width', 1000)
     pd.set_option('display.max_rows', None)
     df = pd.DataFrame(pre_data).T
-    print(df)
+    # print(df)
     print(pre_data)
 
 # if __name__ == "__main__":
