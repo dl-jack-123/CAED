@@ -14,17 +14,17 @@
 | 項目 | 內容 | 負責人 | 完成時間 |
 | :--: | :--: | :--: |:--:|
 | 爬蟲主題方向 | 人力銀行職缺相關內容 | - | 2025-01-14 |
-| 架設 Airflow 服務 | 以 Docker compose 啟動 | PC / DL | 2025-01-16 |
+| 架設 Airflow 服務 | 以 `Docker compose` 啟動 | PC / DL | 2025-01-16 |
 | [104](https://www.104.com.tw/) 爬蟲實作 | 簡易版 | PC | 2025-01-26 |
 | [Cake](https://www.cake.me/) 爬蟲實作 | 簡易版 | PC | 2025-01-26 |
-| README 更新 | D. Note Library | PC | 2025-01-26 |
-| 資料庫定義 | sql/CreateDB.sql | DL | 2025-02-10 |
-| 資料表定義 | sql/Job.sql | DL | 2025-02-10 |
-| 資料存取設置 | db_connect_setup.md | DL | 2025-02-10 |
-| 資料表建立 | construct_sql_syntax/save_db.py | PC / DL | 2025-02-10 |
-| 順利以 PostgreSQL 儲存資料 | - | DL | 2025-02-10 |
+| README 更新 | `D. Note Library` | PC | 2025-01-26 |
+| 資料庫定義 | `sql/CreateDB.sql` | DL | 2025-02-10 |
+| 資料表定義 | `sql/Job.sql` | DL | 2025-02-10 |
+| 資料存取設置 | `note/db_connect_setup.md` | DL | 2025-02-10 |
+| 資料表建立 | `dags/create_job_table.py` | DL | 2025-02-10 |
+| 順利以 PostgreSQL 儲存資料 | `construct_sql_syntax/save_db.py` | PC / DL | 2025-02-10 |
 | [Yourator](https://www.yourator.co/) 爬蟲實作 | 簡易版 |  | - |
-| 專案初版完成 | 至少 3 個人力網站 |  | - |
+| 專案初版完成 | 至少 `3` 個人力網站 |  | - |
 | ELK Stack | *如何操作使用 | PC / DL | - |
 | Public Clouds | *如何上傳 | PC / DL | - |
 
