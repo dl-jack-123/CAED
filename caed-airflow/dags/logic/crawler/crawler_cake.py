@@ -21,7 +21,7 @@ def crawler(**kwargs) -> dict:
         "Content-Type": "application/json",
         "Accept": "application/json",
     }
-    x_algolia_api_key = 'NWEyZDQ4ZWNkYTc2NTMxOTFlMTZhZWI5YjczNzQzODg1MDJjOTYxZjdiYzMzZWY1YzM4MDQxOGIyMjFjZTk2MnZhbGlkVW50aWw9MTczODQ2MDA5MiZyZXN0cmljdEluZGljZXM9Sm9iJTJDSm9iX29yZGVyX2J5X2NvbnRlbnRfdXBkYXRlZF9hdCUyQ0pvYl9wbGF5Z3JvdW5kJTJDUGFnZSUyQ1BhZ2Vfb3JkZXJfYnlfY29udGVudF91cGRhdGVkX2F0JmZpbHRlcnM9YWFzbV9zdGF0ZSUzQSslMjJjcmVhdGVkJTIyK0FORCtub2luZGV4JTNBK2ZhbHNlJmhpdHNQZXJQYWdlPTEwJmF0dHJpYnV0ZXNUb1NuaXBwZXQ9JTVCJTIyZGVzY3JpcHRpb25fcGxhaW5fdGV4dCUzQTgwJTIyJTVEJmhpZ2hsaWdodFByZVRhZz0lM0NtYXJrJTNFJmhpZ2hsaWdodFBvc3RUYWc9JTNDJTJGbWFyayUzRQ%3D%3D'
+    x_algolia_api_key = 'YTVlZTJmYjk2ZjIxZTVlYjc3ZTMyOWVlNDgwM2M0YTVkYTI2Y2Y1YzA3YjE0NTAwZmY5MmU2NGQ3YTlhNWFlZHZhbGlkVW50aWw9MTc0MDE1MzExNiZyZXN0cmljdEluZGljZXM9Sm9iJTJDSm9iX29yZGVyX2J5X2NvbnRlbnRfdXBkYXRlZF9hdCUyQ0pvYl9wbGF5Z3JvdW5kJTJDUGFnZSUyQ1BhZ2Vfb3JkZXJfYnlfY29udGVudF91cGRhdGVkX2F0JmZpbHRlcnM9YWFzbV9zdGF0ZSUzQSslMjJjcmVhdGVkJTIyK0FORCtub2luZGV4JTNBK2ZhbHNlJmhpdHNQZXJQYWdlPTEwJmF0dHJpYnV0ZXNUb1NuaXBwZXQ9JTVCJTIyZGVzY3JpcHRpb25fcGxhaW5fdGV4dCUzQTgwJTIyJTVEJmhpZ2hsaWdodFByZVRhZz0lM0NtYXJrJTNFJmhpZ2hsaWdodFBvc3RUYWc9JTNDJTJGbWFyayUzRQ'
     x_algolia_application = '966RG9M3EK'
     url = (
         f'https://{x_algolia_application.lower()}-1.algolianet.com/1/indexes/*/queries?'
@@ -44,22 +44,39 @@ def crawler(**kwargs) -> dict:
         # print(_['hits'])
         for i in _['hits']:
             for job in i['created_jobs_limited']:
-                job = job['title']
-                key = f'{i['name']}_{job}'
+                title = job['title']
+                key = f'{i['name']}_{title}'
                 pre_data[key] = {
+                    'jobNo': key,
+                    'report_date': None,
                     'source_type': 'cake',
-                    'job': job,
+                    'title': title,
                     'company': i['name'],
+                    'state': None,
                     'company_type': i['sector_i18n'],
                     'scale': i['number_of_employees'],
                     'jobs_count': i['created_jobs_count'],
                 }
 
-    return pre_data
+    # TODO 需要轉成像[{}, {}] 的寫法
+    datum = []
+    for k, v in pre_data.items():
+        datum.append({
+            'jobNo': v['jobNo'],
+            'report_date': v['report_date'],
+            'source_type': v['source_type'],
+            'company': v['company'],
+            'title': v['title'],
+            'state': v['state'],
+            'company_type': v['company_type'],
+        })
 
-def log(pre_data):
-# def log(**kwargs):
-#     pre_data = kwargs['ti'].xcom_pull(task_ids='crawler')
+    # return pre_data
+    kwargs['ti'].xcom_push(key=kwargs['key'], value=datum)
+
+# def log(pre_data):
+def log(**kwargs):
+    pre_data = kwargs['ti'].xcom_pull(task_ids=kwargs['task_ids'], key=kwargs['key'])
 
     pd.set_option('display.max_colwidth', None)
     pd.set_option('display.max_columns', None)
@@ -67,8 +84,8 @@ def log(pre_data):
     pd.set_option('display.max_rows', None)
     df = pd.DataFrame(pre_data).T
     print(df)
-    print(pre_data)
+    # print(pre_data)
 
-if __name__ == "__main__":
-    pre_data = crawler()
-    log(pre_data)
+# if __name__ == "__main__":
+#     pre_data = crawler()
+#     log(pre_data)

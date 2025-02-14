@@ -53,13 +53,13 @@ def crawler(**kwargs):
                f"order={order}")
 
         res = session.get(url, headers=headers)
-        # soup = BeautifulSoup(res.text, 'html.parser')
         loader = json.loads(res.text)
         for i in loader['data']['list']:
             # print(i)
+            key = i['jobNo']
             report_date = datetime.strptime(f'{i['appearDate'][:4]}-{i['appearDate'][4:6]}-{i['appearDate'][6:]}', '%Y-%m-%d')
-            pre_data[i['jobNo']] = {
-                'jobNo': i['jobNo'],
+            pre_data[key] = {
+                'jobNo': key,
                 'report_date': str(report_date)[:10],
                 'source_type': '104',
                 'pay': i['salaryDesc'],
@@ -76,7 +76,6 @@ def crawler(**kwargs):
     # TODO 需要轉成像[{}, {}] 的寫法
     datum = []
     for k, v in pre_data.items():
-        # datum += f"('{v['jobNo']}', '{v['report_date']}', '{v['source_type']}', '{v['company']}', '{v['title']}', '{v['state']}', '{v['company_type']}'),\n"
         datum.append({
             'jobNo': v['jobNo'],
             'report_date': v['report_date'],
@@ -88,7 +87,7 @@ def crawler(**kwargs):
         })
 
     # return pre_data
-    kwargs['ti'].xcom_push(key='crawler_data', value=datum)
+    kwargs['ti'].xcom_push(key=kwargs['key'], value=datum)
 
 # def log(pre_data):
 def log(**kwargs):
@@ -99,8 +98,8 @@ def log(**kwargs):
     pd.set_option('display.width', 1000)
     pd.set_option('display.max_rows', None)
     df = pd.DataFrame(pre_data).T
-    # print(df)
-    print(pre_data)
+    print(df)
+    # print(pre_data)
 
 # if __name__ == "__main__":
 #     pre_data = crawler()

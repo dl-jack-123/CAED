@@ -38,6 +38,9 @@ with (DAG(
     task1 = PythonOperator(
         task_id='1.crawler',
         python_callable=crawler,
+        op_kwargs={
+            'key': 'crawler_data',
+        },
         provide_context=True,
     )
     task2 = PythonOperator(

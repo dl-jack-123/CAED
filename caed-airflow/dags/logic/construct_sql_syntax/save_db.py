@@ -14,9 +14,39 @@ def t_job_insert(**kwargs):
         f"('{row['jobNo']}', '{row['report_date']}', '{row['source_type']}', '{row['company']}', '{row['title']}', '{row['state']}', '{row['company_type']}')"
         for row in rows
     )
+    # sql_syntax = f"""
+    #     INSERT INTO {table_name} (job_no, report_date, source_type, company, title, state, company_type)
+    #     VALUES {values};
+    #     """
+
     sql_syntax = f"""
         INSERT INTO {table_name} (job_no, report_date, source_type, company, title, state, company_type)
-        VALUES {values};
-        """
+        VALUES {values}
+        ON CONFLICT (job_no) DO UPDATE
+        SET 
+            report_date = EXCLUDED.report_date,
+            source_type = EXCLUDED.source_type,
+            company = EXCLUDED.company,
+            title = EXCLUDED.title,
+            state = EXCLUDED.state,
+            company_type = EXCLUDED.company_type;
+    """
+
+    # sql_syntax = f"""
+    #     MERGE INTO {table_name} AS target
+    #     USING (VALUES {values}) AS source (job_no, report_date, source_type, company, title, state, company_type)
+    #     ON target.job_no = source.job_no
+    #     WHEN MATCHED THEN
+    #         UPDATE SET
+    #             report_date = source.report_date,
+    #             source_type = source.source_type,
+    #             company = source.company,
+    #             title = source.title,
+    #             state = source.state,
+    #             company_type = source.company_type
+    #     WHEN NOT MATCHED THEN
+    #         INSERT (job_no, report_date, source_type, company, title, state, company_type)
+    #         VALUES (source.job_no, source.report_date, source.source_type, source.company, source.title, source.state, source.company_type);
+    # """
 
     kwargs['ti'].xcom_push(key='construct_sql_syntax', value=sql_syntax)
