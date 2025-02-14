@@ -22,7 +22,8 @@
 | 資料表定義 | `sql/Job.sql` | DL | 2025-02-10 |
 | 資料存取設置 | `note/db_connect_setup.md` | DL | 2025-02-10 |
 | 資料表建立 | `dags/create_job_table.py` | DL | 2025-02-10 |
-| 順利以 PostgreSQL 儲存資料 | `construct_sql_syntax/save_db.py` | PC / DL | 2025-02-10 |
+| 順利以 PostgreSQL 儲存資料 | `construct_sql_syntax/save_db.py` | PC / DL | 2025-02-15 |
+| UI 介面瀏覽 SQL 數據 | `note/ui_operations.md` | PC | - |
 | [Yourator](https://www.yourator.co/) 爬蟲實作 | 簡易版 |  | - |
 | 專案初版完成 | 至少 `3` 個人力網站 |  | - |
 | ELK Stack | *如何操作使用 | PC / DL | - |
