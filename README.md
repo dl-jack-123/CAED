@@ -17,11 +17,15 @@
 | 架設 Airflow 服務 | - | PC / DL | 2025-01-16 |
 | 104 爬蟲實作 | 簡易版 | PC | 2025-01-26 |
 | cake 爬蟲實作 | 簡易版 | PC | 2025-01-26 |
-| 資料表定義 | - | PC / DL | 2025-02-10 |
+| README 更新 | D. Note Library | PC | 2025-01-26 |
+| 資料表定義 | - | DL | 2025-02-10 |
 | 資料存取設置 | - | DL | 2025-02-10 |
 | 資料表建立 | - | DL | 2025-02-10 |
 | 以 PostgreSQL 儲存資料 | - | DL | 2025-02-10 |
-| Public Clouds | - | PC / DL | - |
+| yourator 爬蟲實作 | 簡易版 |  | - |
+| 專案初版完成 | 3 個人力網站 + DAG 操作使用 |  | - |
+| ELK Stack | *如何操作使用 | PC / DL | - |
+| Public Clouds | *如何上傳 | PC / DL | - |
 
 <br>
 
@@ -36,7 +40,7 @@
   - #### *Docker :* 將數個服務容器化，統一管理
 - ### *b.　PostgreSQL*
   - #### 定義資料庫規範
-  - #### 測試基本的資料寫入、查詢與驗證
+  - #### 測試 CRUD 標準操作
 - ### *c.　Deployed on 3 Major Public Clouds*
   - #### Amazon Web Services
   - #### Google Cloud Platform
