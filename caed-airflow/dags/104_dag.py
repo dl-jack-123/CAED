@@ -2,6 +2,7 @@ from datetime import datetime, timedelta
 
 from airflow import DAG
 from airflow.datasets import Dataset
+from airflow.operators.bash import BashOperator
 from airflow.operators.python import PythonOperator
 from airflow.providers.postgres.operators.postgres import PostgresOperator
 from airflow.providers.common.sql.operators.sql import SQLExecuteQueryOperator
@@ -37,8 +38,12 @@ with DAG(
         catchup=False,
 ) as dag:
     task1 = PythonOperator(
+    # task1 = BashOperator(
         task_id='1.crawler',
         python_callable=crawler,
+        # bash_command='python3 -c "import sys; sys.path.append("/opt/airflow/dags/logic/crawler/"); from crawler_104 import crawler; crawler()"',
+        # bash_command='python3 -c "from logic.crawler.crawler_104 import crawler; crawler()"',
+        # bash_command='python3 -c "import pdb; from logic.crawler.crawler_104 import crawler; pdb.set_trace(); crawler()"',
         op_kwargs={
             'key': 'crawler_data',
         },

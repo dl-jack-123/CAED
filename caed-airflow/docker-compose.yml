@@ -299,6 +299,8 @@ services:
     volumes:
       - ./.pycharm_helpers:/opt/.pycharm_helpers
       - ./dags:/opt/airflow/dags
+      - ./logs:/opt/airflow/logs
+      - ./plugins:/opt/airflow/plugins
     depends_on:
       <<: *airflow-common-depends-on
       airflow-init:

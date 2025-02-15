@@ -25,7 +25,6 @@
 | PostgreSQL 儲存資料 | `construct_sql_syntax/save_db.py` | PC / DL | 2025-02-15 |
 | ELK Stack | `note/elk_installation.md` | DL | 2025-02-15 |
 | [Yourator](https://www.yourator.co/) 爬蟲實作 | 簡易版 | PC | 2025-02-15 |
-| UI 介面瀏覽 DB 具體更新狀態<br>( 經由 DAG 設定 ) | `note/ui_operations.md` | PC | 2025-02-15 |
 | 專案初版完成 | 至少 `3` 個人力網站 | - | 2025-02-15 |
 | ~~Public Clouds~~ | ~~*如何上傳~~ | - | - |
 
@@ -52,7 +51,7 @@
 
 ## *C.　Showcase Results*
 ```commandline
-# airflow:airflow
+# airflow:airflow # account:password
 http://localhost:8080/
 ```
 ![00.jpg](sample/home_00.jpg)
