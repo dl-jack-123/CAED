@@ -37,6 +37,8 @@ docker-compose up -d --no-deps --build postgres
 - Done !
 
 ### *IV.　數據成功餵入 DB 後，Refresh 即可看到數據*
-- ![png](../sample/db_connect_setup_6.png)
-- ![png](../sample/db_connect_setup_7.png)
+- <img alt="png" width='500' height='500' src="https://github.com/dl-jack-123/CAED/blob/main/sample/db_connect_setup_6.png"/>
+- <img alt="png" width='500' height='500' src="https://github.com/dl-jack-123/CAED/blob/main/sample/db_connect_setup_7.png"/>
+[//]: # (- ![png]&#40;../sample/db_connect_setup_6.png&#41;)
+[//]: # (- ![png]&#40;../sample/db_connect_setup_7.png&#41;)
 

@@ -11,8 +11,6 @@
 
 ## *⭐ Airflow UI Operations ⭐*
 
-<br>
-
 ### *I.　如何檢視 Dag 任務 log*
 ![jpg](../sample/ui_00.jpg)
 ![jpg](../sample/ui_01.jpg)

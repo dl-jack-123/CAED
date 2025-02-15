@@ -11,8 +11,6 @@
 
 ## *⭐ Airflow Installation ⭐*
 
-<br>
-
 ### *I.　建立資料夾*
 ```commandline
 cd caed-airflow
