@@ -28,13 +28,14 @@ None: 不進行調度，僅用於「外部觸發」DAG
 @yearly: 每年 1 月 1 日午夜運行一次
 """
 
-with (DAG(
+
+with DAG(
         'crawler_104',
         default_args=default_args,
         schedule='@daily',
         start_date=datetime(2025, 1, 1),
         catchup=False,
-) as dag):
+) as dag:
     task1 = PythonOperator(
         task_id='1.crawler',
         python_callable=crawler,

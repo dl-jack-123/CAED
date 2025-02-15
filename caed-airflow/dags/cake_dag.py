@@ -8,6 +8,7 @@ from airflow.providers.common.sql.operators.sql import SQLExecuteQueryOperator
 from logic.crawler.crawler_cake import crawler, log
 from logic.construct_sql_syntax.save_db import t_job_insert
 
+# DAG settings
 default_args = {
     'owner': 'airflow',
     'depends_on_past': False,

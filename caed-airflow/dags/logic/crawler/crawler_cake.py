@@ -10,7 +10,7 @@ import pandas as pd
 from datetime import datetime
 from bs4 import BeautifulSoup
 
-def crawler(**kwargs):
+def crawler(**kwargs) -> dict:
     pre_data = {}
     session = requests.Session()
 
@@ -45,7 +45,7 @@ def crawler(**kwargs):
         for i in _['hits']:
             for job in i['created_jobs_limited']:
                 title = job['title']
-                key = f'{i['name']}_{title}'
+                key = f"{i['name']}_{title}"
                 pre_data[key] = {
                     'jobNo': key,
                     'report_date': None,
