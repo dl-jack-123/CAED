@@ -57,7 +57,7 @@ def crawler(**kwargs):
         for i in loader['data']['list']:
             # print(i)
             key = i['jobNo']
-            report_date = datetime.strptime(f'{i['appearDate'][:4]}-{i['appearDate'][4:6]}-{i['appearDate'][6:]}', '%Y-%m-%d')
+            report_date = datetime.strptime(f"{i['appearDate'][:4]}-{i['appearDate'][4:6]}-{i['appearDate'][6:]}", '%Y-%m-%d')
             pre_data[key] = {
                 'jobNo': key,
                 'report_date': str(report_date)[:10],

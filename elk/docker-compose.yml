@@ -1,0 +1,36 @@
+version: "3.9"
+
+services:
+  elasticsearch:
+    build:
+      context: .
+      # 此 dockerfile 可以看下方的設定
+      dockerfile: ./docker/es/Dockerfile
+    container_name: elasticsearch
+    environment:
+      - discovery.type=single-node
+      - xpack.security.enabled=false
+      - xpack.security.http.ssl:enabled=false
+    ports:
+      - 9200:9200
+      - 9300:9300
+    networks:
+      - elastic
+  kibana:
+    image: kibana:8.5.3
+    container_name: kibana
+    depends_on:
+      - elasticsearch
+    links:
+      - elasticsearch:elasticsearch
+    ports:
+      - 5601:5601
+    volumes:
+       # 此 config 的設定可以看下方的設定
+      - ./config/kibana/kibana.yml:/usr/share/kibana/config/kibana.yml
+    networks:
+      - elastic
+
+networks:
+  elastic:
+    driver: bridge
