@@ -1,5 +1,5 @@
 <a href='https://github.com/dl-jack-123/CAED'><img alt='GitHub Views' src='https://views.whatilearened.today/views/github/dl-jack-123/CAED.svg'> 
-<a href='https://github.com/dl-jack-123/CAED'><img alt='GitHub Views' src='https://img.shields.io/badge/dynamic/json?color=success&label=Clone&query=count_total&url=https://gist.githubusercontent.com/dl-jack-123/04f0f768feebd9f972d884fd1aae2114/raw/CAED_clone.json&logo=github](https://github.com/Junwu0615/How-To-Use-Clone-Shields'> <br> 
+<a href='https://github.com/dl-jack-123/CAED'><img alt='GitHub Views' src='https://img.shields.io/badge/dynamic/json?color=success&label=Clone&query=count_total&url=https://gist.githubusercontent.com/dl-jack-123/7b40f4b7a8ef0f41258dd5343a77e1a9/raw/CAED_clone.json&logo=github](https://github.com/Junwu0615/How-To-Use-Clone-Shields'> <br> 
 [![](https://img.shields.io/badge/Project-Apache_Airflow-blue.svg?style=plastic)](https://github.com/dl-jack-123/CAED) 
 [![](https://img.shields.io/badge/Project-Docker-blue.svg?style=plastic)](https://github.com/dl-jack-123/CAED) 
 [![](https://img.shields.io/badge/Project-Crawler-blue.svg?style=plastic)](https://github.com/dl-jack-123/CAED) <br>
@@ -21,6 +21,8 @@
   3. #### 地理空間分析處理等
   4. #### 其他
 
+<br>
+
 ## *II.　安裝方式*
 - ### *a.　進入路徑並啟動服務*
     ```bash
@@ -41,6 +43,7 @@
   - #### 設定 Port : 9200
   - #### 點選 Save
 
+<br>
 
 ## *III.　Reference*
 -  ### [ElasticSearch 教學](https://gary840227.medium.com/elasticsearch-%E6%95%99%E5%AD%B8-fdbb9fdf3225)

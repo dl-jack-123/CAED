@@ -1,5 +1,5 @@
 <a href='https://github.com/dl-jack-123/CAED'><img alt='GitHub Views' src='https://views.whatilearened.today/views/github/dl-jack-123/CAED.svg'> 
-<a href='https://github.com/dl-jack-123/CAED'><img alt='GitHub Views' src='https://img.shields.io/badge/dynamic/json?color=success&label=Clone&query=count_total&url=https://gist.githubusercontent.com/dl-jack-123/04f0f768feebd9f972d884fd1aae2114/raw/CAED_clone.json&logo=github](https://github.com/Junwu0615/How-To-Use-Clone-Shields'> <br> 
+<a href='https://github.com/dl-jack-123/CAED'><img alt='GitHub Views' src='https://img.shields.io/badge/dynamic/json?color=success&label=Clone&query=count_total&url=https://gist.githubusercontent.com/dl-jack-123/7b40f4b7a8ef0f41258dd5343a77e1a9/raw/CAED_clone.json&logo=github](https://github.com/Junwu0615/How-To-Use-Clone-Shields'> <br> 
 [![](https://img.shields.io/badge/Project-Apache_Airflow-blue.svg?style=plastic)](https://github.com/dl-jack-123/CAED) 
 [![](https://img.shields.io/badge/Project-Docker-blue.svg?style=plastic)](https://github.com/dl-jack-123/CAED) 
 [![](https://img.shields.io/badge/Project-Crawler-blue.svg?style=plastic)](https://github.com/dl-jack-123/CAED) <br>
@@ -11,13 +11,19 @@
 
 ## *⭐ Database Connection Setup (PostgreSQL) ⭐*
 
-#### I.　設定連接 port，兩個 `5432`，代表 docker 容器外和容器內的 port
+### *I.　設定連接 port，兩個 `5432`，代表 docker 容器外和容器內的 port*
 ![png](../sample/db_connect_setup_0.png)
 
-#### II.　重新 Build Postgres 的服務
+<br>
+
+### *II.　重新 Build Postgres 的服務*
 ```bash
 docker-compose up -d --no-deps --build postgres
 ```
+
+<br>
+
+### *III.　Airflow UI 介面設定*
 - Connection Id ( SQL 在 Airflow 中使用的 ID ): `ps` ( postgreSQL )
 - HOST ( 連接主機IP ): `Your ipv4 address`
 - Connection Type ( 連接資料庫類型 ): `Postgres`

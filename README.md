@@ -33,8 +33,8 @@
 
 ## *B.　Summary*
 - ### *a.　Crawler + Airflow + ELK Stack + Docker*
-  - #### *Crawler :* 撰寫爬蟲邏輯 ( 資料抓取 / 資料驗證 )
-  - #### *Airflow :* 使用其管理工作流 ( 定時排程 / 通知 /...等 )
+  - #### *Crawler :* 撰寫爬蟲邏輯，並基於 ETL 流程實作
+  - #### *Airflow :* 使用其框架管理工作流
   - #### *ELK Stack*
     - #### 部署 ELK 監控 Airflow 的任務執行情況和爬蟲日誌
     - #### 配置 Logstash，將 Airflow 和爬蟲日誌導入 Elasticsearch
