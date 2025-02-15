@@ -11,7 +11,7 @@
 
 ## *⭐ ELK Stack ⭐*
 
-## *I.　功能說明*
+### *I.　功能說明*
 - #### ElasticSearch : 搜尋引擎
 - #### Logstash : log 資料收集
 - #### Kibana : 資料視覺化
@@ -23,7 +23,7 @@
 
 <br>
 
-## *II.　安裝方式*
+### *II.　安裝方式*
 - ### *a.　進入路徑並啟動服務*
     ```bash
     cd elk; # 進入 elk 目錄
@@ -45,5 +45,5 @@
 
 <br>
 
-## *III.　Reference*
+### *III.　Reference*
 -  ### [ElasticSearch 教學](https://gary840227.medium.com/elasticsearch-%E6%95%99%E5%AD%B8-fdbb9fdf3225)

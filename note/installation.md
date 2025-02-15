@@ -11,6 +11,8 @@
 
 ## *⭐ Airflow Installation ⭐*
 
+<br>
+
 ### *I.　建立資料夾*
 ```commandline
 cd caed-airflow
@@ -18,6 +20,8 @@ cd caed-airflow
 ```commandline
 md dags; md logs; md plugins; md config; md database; md .pycharm_helpers
 ```
+
+<br>
 
 ### *II.　設定變數*
 - 設定 AIRFLOW_UID 
@@ -29,19 +33,24 @@ md dags; md logs; md plugins; md config; md database; md .pycharm_helpers
     AIRFLOW_UID=50000
     ```
 
+<br>
+
 ### *III.　初始化服務*
 ```bash
 docker compose up airflow-init -d
 ```
+
+<br>
 
 ### *IV.　啟動 Python Debug 服務*
 ```bash
 docker compose up airflow-python -d
 ```
 
+<br>
+
 ### *V.　執行*
 ```bash
 docker compose up -d
 ```
-
 ![jpg](../sample/installation_00.jpg)
