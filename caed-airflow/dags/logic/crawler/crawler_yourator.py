@@ -15,33 +15,28 @@ def crawler(**kwargs):
     session = requests.Session()
 
     headers = {
-        'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36',
-        'referer': '',
-        'accept': '*/*',
-        'accept-encoding': 'gzip, deflate, br, zstd',
-        'cookie': '',
+        'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/121.0.6167.184 Safari/537.36 Edg/121.0.2277.128',
+        'referer': 'https://www.yourator.co/jobs',
+        'accept': 'application/json',
+        'content-type': 'application/json',
     }
-    url = ''
-
+    url = 'https://www.yourator.co/api/v4/jobs?negotiable=false&page=1&position[]=full_time&task_based=false'
     res = session.get(url, headers=headers)
     loader = json.loads(res.text)
-    for i in loader['data']['list']:
-        # print(i)
-        # key = i['jobNo']
+    for i in loader['payload']['jobs']:
+        print(i)
+        key = i['id']
         # report_date = datetime.strptime(f'{i['appearDate'][:4]}-{i['appearDate'][4:6]}-{i['appearDate'][6:]}', '%Y-%m-%d')
         pre_data[key] = {
-            # 'jobNo': key,
-            # 'report_date': str(report_date)[:10],
-            'source_type': 'Yourator',
-            # 'pay': i['salaryDesc'],
-            # 'state': i['applyDesc'],
-            # 'company': i['custNameRaw'],
-            # 'title': i['jobName'],
-            # 'company_type': i['coIndustryDesc'],
-            # 'area': i['jobAddrNoDesc'],
-            # 'condition_1': i['optionEdu'],
-            # 'condition_2': '工作經歷' + i['periodDesc'],
-            # 'link': 'https://' + i['link']['job'],
+            'jobNo': key,
+            'report_date': None,
+            'source_type': 'yourator',
+            'pay': i['salary'],
+            'state': None,
+            'company': i['company']['brand'],
+            'title': i['name'],
+            'company_type': None,
+            'area': i['location'],
         }
 
     # TODO 需要轉成像[{}, {}] 的寫法

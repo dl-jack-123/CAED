@@ -24,9 +24,9 @@
 | 資料表建立 | `dags/create_job_table.py` | DL | 2025-02-10 |
 | 順利以 PostgreSQL 儲存資料 | `construct_sql_syntax/save_db.py` | PC / DL | 2025-02-15 |
 | ELK Stack | `note/elk_installation.md` | DL | 2025-02-15 |
+| [Yourator](https://www.yourator.co/) 爬蟲實作 | 簡易版 | PC | 2025-02-15 |
 | UI 介面瀏覽 SQL 數據 | `note/ui_operations.md` | PC | - |
-| [Yourator](https://www.yourator.co/) 爬蟲實作 | 簡易版 |  | - |
-| 專案初版完成 | 至少 `3` 個人力網站 |  | - |
+| 專案初版完成 | 至少 `3` 個人力網站 | - | 2025-02-15 |
 | Public Clouds | *如何上傳 | PC / DL | - |
 
 <br>
