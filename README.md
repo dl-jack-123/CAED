@@ -27,7 +27,7 @@
 | [Yourator](https://www.yourator.co/) 爬蟲實作 | 簡易版 | PC | 2025-02-15 |
 | UI 介面瀏覽 DB 具體更新狀態<br>( 經由 DAG 設定 ) | `note/ui_operations.md` | PC | 2025-02-15 |
 | 專案初版完成 | 至少 `3` 個人力網站 | - | 2025-02-15 |
-| Public Clouds | *如何上傳 | PC / DL | - |
+| ~~Public Clouds~~ | ~~*如何上傳~~ | - | - |
 
 <br>
 
@@ -43,7 +43,7 @@
 - ### *b.　PostgreSQL*
   - #### 定義資料庫規範
   - #### 測試 CRUD 標準操作
-- ### *c.　Deployed on 3 Major Public Clouds*
+- ### *c.　Deployed on 3 Major Public Clouds<br>( `Airflow 為地端開發的解決方案，至此後續就不上雲端` )*
   - #### Amazon Web Services
   - #### Google Cloud Platform
   - #### Microsoft Azure
