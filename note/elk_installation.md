@@ -22,6 +22,17 @@ docker-compose up -d;
 ![img.png](../sample/elastic_home.png)
 
 
+#### Airflow 設定
+
+1. 進入 Airflow 管理介面
+2. 點選 Admin -> Connections
+3. 點選 Create
+4. 設定 Connection Id: elasticsearch_default
+5. 設定 Connection Type: elasticsearch
+6. 設定 Host: [ip]
+7. 設定 Port: 9200
+8. 點選 Save
+
 
 ##### 參考
 
