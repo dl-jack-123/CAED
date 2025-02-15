@@ -36,3 +36,7 @@ docker-compose up -d --no-deps --build postgres
 - ![png](../sample/db_connect_setup_5.png)
 - Done !
 
+### *IV.　數據成功餵入 DB 後，Refresh 即可看到數據*
+- ![png](../sample/db_connect_setup_6.png)
+- ![png](../sample/db_connect_setup_7.png)
+

@@ -28,3 +28,9 @@
 
 ### *III.　從 DAG log 中的 `XCom` 可以檢視 `流程函式` 傳遞的變數*
 ![jpg](../sample/ui_05.jpg)
+
+<br>
+
+### *IV.　可從 Datasets 查詢 DAG 腳本與資料表的關聯性*
+![jpg](../sample/ui_06.jpg)
+![jpg](../sample/ui_07.jpg)

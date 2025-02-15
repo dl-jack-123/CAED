@@ -1,6 +1,7 @@
 from datetime import datetime, timedelta
 
 from airflow import DAG
+from airflow.datasets import Dataset
 from airflow.operators.python import PythonOperator
 from airflow.providers.postgres.operators.postgres import PostgresOperator
 from airflow.providers.common.sql.operators.sql import SQLExecuteQueryOperator
@@ -66,6 +67,8 @@ with DAG(
         task_id='4.store-postgres',
         postgres_conn_id='ps',  # You need to set up a connection for PostgreSQL
         sql="{{ ti.xcom_pull(task_ids='3.construct_sql_syntax-insert', key='construct_sql_syntax') }}",
+        outlets=[Dataset("postgres://ps/t_job")],  # 將這個查詢結果標記給指定位置 DB
+        dag=dag,
     )
 
     task1 >> task2 >> task3 >> task4
