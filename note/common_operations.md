@@ -13,14 +13,14 @@
 
 <br>
 
-#### *重啟服務 ( 更新檔案後的重整 )*
+### *a.　重啟服務 ( 更新檔案後的重整 )*
 ```bash
 docker-compose restart airflow-webserver
 ```
 
 <br>
 
-#### *完全重啟服務*
+### *b.　完全重啟服務*
 ```bash
 docker-compose down
 ```
@@ -30,7 +30,7 @@ docker-compose up -d
 
 <br>
 
-#### *移除服務步驟*
+### *c.　移除服務步驟*
 ```bash
 docker stop <airflow-python container id>
 ```
