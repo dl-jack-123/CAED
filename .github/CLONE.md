@@ -3,11 +3,11 @@
   **Markdown**
 
   ```markdown
-[![GitHub Clones](https://img.shields.io/badge/dynamic/json?color=success&label=Clone&query=$.id_916112310.count&url=https://gist.githubusercontent.com/Junwu0615/b570f32cea55f9609cc196814f86c405/raw/clone.json&logo=github)](https://github.com/dl-jack-123/CAED.git)
+[![GitHub Clones](https://img.shields.io/badge/dynamic/json?color=success&label=Clone&query=$.id_916112310.count&url=https://gist.githubusercontent.com/Junwu0615/6250a09740a8b357a2e54648f02e2ad7/raw/clone.json&logo=github)](https://github.com/dl-jack-123/CAED.git)
 
   ```
 
   **HTML**
   ```html
-<a href='https://github.com/dl-jack-123/CAED.git'><img alt='GitHub Clones' src='https://img.shields.io/badge/dynamic/json?color=success&label=Clone&query=$.id_916112310.count&url=https://gist.githubusercontent.com/Junwu0615/b570f32cea55f9609cc196814f86c405/raw/clone.json&logo=github'></a>
+<a href='https://github.com/dl-jack-123/CAED.git'><img alt='GitHub Clones' src='https://img.shields.io/badge/dynamic/json?color=success&label=Clone&query=$.id_916112310.count&url=https://gist.githubusercontent.com/Junwu0615/6250a09740a8b357a2e54648f02e2ad7/raw/clone.json&logo=github'></a>
 ```
